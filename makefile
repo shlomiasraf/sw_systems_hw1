@@ -13,14 +13,14 @@ recursived: $(OBJECTS_LIB_Recursive)
 	$(CC) -shared -o libclassrec.so $(OBJECTS_LIB_Recursive)
 loopd: $(OBJECTS_LIB_Loop)
 	$(CC) -shared -o libclassloops.so $(OBJECTS_LIB_Loop)
-mains: $(OBJECTS_MAIN) libclassrec.a 
+mains: $(OBJECTS_MAIN) recursives 
 	$(CC) $(FLAGS) -o mains $(OBJECTS_MAIN) libclassrec.a
-maindloop: $(OBJECTS_MAIN)
-	$(CC) $(FLAGS) -o maindloop $(OBJECTS_MAIN) ./libclassloops.so
+maindloop: $(OBJECTS_MAIN) loopd
+	$(CC) $(FLAGS) -o maindloop $(OBJECTS_MAIN) libclassloops.so	
+maindrec:  $(OBJECTS_MAIN) recursived
+	$(CC) $(FLAGS) -o maindrec $(OBJECTS_MAIN) libclassrec.so	
 main.o: main.c NumClass.h  
-	$(CC) $(FLAGS) -c main.c 	
-maindrec:  $(OBJECTS_MAIN)
-	$(CC) $(FLAGS) -o maindrec $(OBJECTS_MAIN) ./libclassrec.so	
+	$(CC) $(FLAGS) -c main.c 
 basicClassification.o: basicClassification.c NumClass.h
 	$(CC) $(FLAGS) -fPIC -c basicClassification.c
 advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
