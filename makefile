@@ -10,9 +10,9 @@ loops: $(OBJECTS_LIB_Loop)
 recursives: $(OBJECTS_LIB_Recursive)
 	$(AR) -rcs libclassrec.a $(OBJECTS_LIB_Recursive)
 recursived: $(OBJECTS_LIB_Recursive)
-	$(CC) -shared -o libclassrec.so $(OBJECTS_LIB_Recursive)
+	$(CC) -shared -fpic -o libclassrec.so $(OBJECTS_LIB_Recursive)
 loopd: $(OBJECTS_LIB_Loop)
-	$(CC) -shared -o libclassloops.so $(OBJECTS_LIB_Loop)
+	$(CC) -shared -fpic -o libclassloops.so $(OBJECTS_LIB_Loop)
 mains: $(OBJECTS_MAIN) recursives 
 	$(CC) $(FLAGS) -o mains $(OBJECTS_MAIN) libclassrec.a
 maindloop: $(OBJECTS_MAIN) loopd
