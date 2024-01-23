@@ -32,63 +32,39 @@ int main()
     scanf("%d", &num1);
     printf("enter number 2:");
     scanf("%d", &num2);
-    printf("prime numbers: ");
-    bool first = true;
+    printf("The Armstrong numbers are:");
     for(int i = getMin(num1,num2); i <= getMax(num1,num2); i++)
     {
-        if(isPrime(i) && first)
+        if(isArmstrong(i))
         {
-            printf("%d", i);
-            first = false;
-        }
-        else if(isPrime(i))
-        {
-            printf(", ");
+            printf(" ");
             printf("%d", i);
         }
     }
-    printf("\namstrong numbers: ");
-    first = true;
+    printf("\nThe Palindromes are:");
     for(int i = getMin(num1,num2); i <= getMax(num1,num2); i++)
     {
-        if(isArmstrong(i) && first)
+        if(isPalindrome(i))
         {
-            printf("%d", i);
-            first = false;
-        }
-        else if(isArmstrong(i))
-        {
-            printf(", ");
+            printf(" ");
             printf("%d", i);
         }
     }
-    printf("\nstrong numbers: ");
-    first = true;
+    printf("\nThe Prime numbers are:");
     for(int i = getMin(num1,num2); i <= getMax(num1,num2); i++)
     {
-        if(isStrong(i) && first)
+        if(isPrime(i))
         {
-            printf("%d", i);
-            first = false;
-        }
-        else if(isStrong(i))
-        {
-            printf(", ");
+            printf(" ");
             printf("%d", i);
         }
     }
-    printf("\npalindrome numbers: ");
-    first = true;
+    printf("\nThe Strong numbers are:");
     for(int i = getMin(num1,num2); i <= getMax(num1,num2); i++)
     {
-        if(isPalindrome(i) && first)
+        if(isStrong(i))
         {
-            printf("%d", i);
-            first = false;
-        }
-        else if(isPalindrome(i))
-        {
-            printf(", ");
+            printf(" ");
             printf("%d", i);
         }
     }
