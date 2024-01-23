@@ -21,14 +21,6 @@ maindrec:  $(OBJECTS_MAIN) recursived
 	$(CC) $(FLAGS) -o maindrec $(OBJECTS_MAIN) libclassrec.so	
 main.o: main.c NumClass.h  
 	$(CC) $(FLAGS) -c main.c 
-basicClassification.o: basicClassification.c NumClass.h
-	$(CC) $(FLAGS) -fPIC -c basicClassification.c
-advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
-	$(CC) $(FLAGS) -fPIC -c advancedClassificationLoop.c
-advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h
-	$(CC) $(FLAGS) -fPIC -c advancedClassificationRecursion.c
-
-
 
 clean:
 	rm -f *.o *.a *.so mains maindloop maindrec
