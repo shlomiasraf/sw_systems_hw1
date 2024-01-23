@@ -28,7 +28,6 @@ int getMax(int num1, int num2)
 int main()
 {
     int num1, num2;
-    printf("enter 2 numbers: \n");
     scanf( "%d %d", &num1, &num2);
     printf("The Armstrong numbers are:");
     for(int i = getMin(num1,num2); i <= getMax(num1,num2); i++)
