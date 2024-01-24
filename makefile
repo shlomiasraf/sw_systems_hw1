@@ -15,7 +15,7 @@ maindloop: $(OBJECTS_MAIN) libclassloops.so
 	$(CC) $(FLAGS) -o maindloop $(OBJECTS_MAIN) ./libclassloops.so	
 maindrec:  $(OBJECTS_MAIN) libclassrec.so
 	$(CC) $(FLAGS) -o maindrec $(OBJECTS_MAIN) ./libclassrec.so	
-main.o: main.c  
+main.o: main.c NumClass.h
 	$(CC) $(FLAGS) -c main.c 
 libclassloops.a: $(OBJECTS_LIB_Loop)
 	$(AR) rcs $@ $^
@@ -25,5 +25,7 @@ libclassrec.so: $(OBJECTS_LIB_Recursive)
 	$(CC) -shared -fpic -o libclassrec.so $(OBJECTS_LIB_Recursive)
 libclassloops.so: $(OBJECTS_LIB_Loop)
 	$(CC) -shared -fpic -o libclassloops.so $(OBJECTS_LIB_Loop)
+%.o: %.c NumClass.h
+	$(CC) $(CFLAGS) -c $<
 clean:
 	rm -f *.o *.a *.so mains maindloop maindrec
