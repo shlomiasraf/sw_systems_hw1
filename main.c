@@ -10,6 +10,7 @@ Welcome to GDB Online.
 #include "NumClass.h"
 #include <stdbool.h>
 
+//Check the min of two numbers	
 int getMin(int num1, int num2)
 {
     if(num1 <= num2)
@@ -18,6 +19,7 @@ int getMin(int num1, int num2)
     }
     return num2;
 }
+//Check the max of two numbers	
 int getMax(int num1, int num2)
 {
     if(num1 >= num2)
@@ -30,6 +32,7 @@ int main()
 {
     int num1, num2;
     scanf( "%d %d", &num1, &num2);
+    //print all The Armstrong numbers between the two numbers we get. 
     printf("The Armstrong numbers are:");
     for(int i = getMin(num1,num2); i <= getMax(num1,num2); i++)
     {
@@ -49,6 +52,7 @@ int main()
             printf("%d", i);
         }
     }
+    //print all The Prime numbers between the two numbers we get. 
     printf("\nThe Prime numbers are:");
     for(int i = getMin(num1,num2); i <= getMax(num1,num2); i++)
     {
@@ -58,6 +62,7 @@ int main()
             printf("%d", i);
         }
     }
+    //print all The Strong numbers between the two numbers we get. 
     printf("\nThe Strong numbers are:");
     for(int i = getMin(num1,num2); i <= getMax(num1,num2); i++)
     {
