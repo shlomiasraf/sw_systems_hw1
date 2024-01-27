@@ -41,6 +41,6 @@ libclassloops.so: $(OBJECTS_LIB_Loop)
 # Add NumClass.h to the implicit rules
 %.o: %.c NumClass.h
 	$(CC) $(CFLAGS) -c $<
-#Clear everything we create
+# Clear everything we create
 clean:
 	rm -f *.o *.a *.so mains maindloop maindrec
